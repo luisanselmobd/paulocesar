@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Cesar - Terapia Online | O diálogo como janela para o interior</title>
+    <meta name="description" content="Terapia online baseada no diálogo crítico. Atendimento 100% online com flexibilidade de plataforma e valor. Agende sua consulta." />
+    <meta name="author" content="Paulo Cesar" />
+    
+    <meta property="og:title" content="Paulo Cesar - Terapia Online" />
+    <meta property="og:description" content="O diálogo como janela para o interior. Terapia online baseada no diálogo crítico." />
+    <meta property="og:type" content="website" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(220 15% 97%)',
+                        foreground: 'hsl(220 30% 15%)',
+                        card: 'hsl(0 0% 100%)',
+                        'card-foreground': 'hsl(220 30% 15%)',
+                        primary: 'hsl(205 85% 55%)',
+                        'primary-foreground': 'hsl(0 0% 100%)',
+                        'primary-glow': 'hsl(205 85% 70%)',
+                        secondary: 'hsl(220 15% 95%)',
+                        'secondary-foreground': 'hsl(220 30% 15%)',
+                        muted: 'hsl(220 15% 92%)',
+                        'muted-foreground': 'hsl(220 15% 45%)',
+                        accent: 'hsl(180 75% 60%)',
+                        'accent-foreground': 'hsl(0 0% 100%)',
+                        border: 'hsl(220 15% 88%)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, hsl(205 85% 55%), hsl(180 75% 60%));
+            --gradient-subtle: linear-gradient(180deg, hsl(220 15% 97%), hsl(220 15% 95%));
+            --gradient-hero: linear-gradient(135deg, hsl(205 85% 55% / 0.05), hsl(180 75% 60% / 0.05));
+            --shadow-elegant: 0 10px 30px -10px hsl(205 85% 55% / 0.15);
+            --shadow-soft: 0 4px 20px -4px hsl(220 15% 45% / 0.1);
+        }
+        
+        .gradient-primary { background: var(--gradient-primary); }
+        .gradient-subtle { background: var(--gradient-subtle); }
+        .gradient-hero { background: var(--gradient-hero); }
+        .shadow-elegant { box-shadow: var(--shadow-elegant); }
+        .shadow-soft { box-shadow: var(--shadow-soft); }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(37, 211, 102, 0.4);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elegant);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center px-4 gradient-hero overflow-hidden">
+        <div class="container max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Paulo Cesar
+                </span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8 text-foreground/80 animate-fade-in stagger-1">
+                Terapia Online
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in stagger-2">
+                O diálogo como <span class="text-primary font-semibold">janela para o interior</span>
+            </p>
+            <button onclick="scrollToContact()" class="whatsapp-btn text-white px-8 py-4 rounded-full text-lg font-semibold animate-fade-in stagger-3 hover:shadow-lg transition-all duration-300">
+                💬 Agendar Atendimento
+            </button>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="py-20 px-4 gradient-subtle">
+        <div class="container max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">Como funciona?</h2>
+                <p class="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed animate-slide-up stagger-1">
+                    Minha proposta não é oferecer uma técnica, um passo a passo ou um conjunto de atividades com resultados garantidos — e sim abrir espaço para que pensamentos, sentimentos e ideias que costumam ficar encobertos pelo ritmo cotidiano possam emergir por meio do diálogo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-soft card-hover animate-slide-up stagger-2">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white">🧠</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Escuta Ativa</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        A prática terapêutica é fundamentada na escuta ativa, na apresentação de teses e antíteses, e na construção de um espaço onde o que está reprimido ou negligenciado possa vir à tona com autenticidade.
+                    </p>
+                </div>
+
+                <div class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-soft card-hover animate-slide-up stagger-3">
+                    <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white">💭</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Um método, não uma fórmula</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Diferente de abordagens que prometem eficácia universal e certa, acredito que nenhuma abordagem terapêutica tenha tal poder. O processo terapêutico é, acima de tudo, uma possibilidade, não uma receita de transformação.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-card rounded-2xl p-8 md:p-12 shadow-elegant animate-slide-up stagger-4">
+                <h3 class="text-3xl font-bold mb-8 text-center">Como funcionam os atendimentos?</h3>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="gradient-primary p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">🧩</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Formato</h4>
+                        <p class="text-sm text-muted-foreground">Atendimento 100% online</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="gradient-primary p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📍</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Plataforma</h4>
+                        <p class="text-sm text-muted-foreground">Você escolhe a que preferir (Zoom, Meet, WhatsApp...)</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="gradient-primary p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📆</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Agendamento</h4>
+                        <p class="text-sm text-muted-foreground">Feito via WhatsApp</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="gradient-primary p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">💰</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Valor</h4>
+                        <p class="text-sm text-muted-foreground">Definido por você, com base em sua percepção</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-muted-foreground mt-8 italic">
+                    Maior flexibilidade para eliminar as barreiras e prover a prática do diálogo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="py-20 px-4">
+        <div class="container max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="animate-slide-up">
+                    <h2 class="text-4xl font-bold mb-8">Para quem é essa terapia?</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <p class="text-foreground/80 leading-relaxed">Para quem não busca soluções prontas, mas deseja <b class="font-semibold text-primary">pensar junto.</b></p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <p class="text-foreground/80 leading-relaxed">Para quem se sente engolido pela rotina e quer um momento para <b class="font-semibold text-primary">conversar sobre o que mais importa</b>.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <p class="text-foreground/80 leading-relaxed">Para quem <b class="font-semibold text-primary">não teme o questionamento e a reflexão</b> acerca de si e seu contexto.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <p class="text-foreground/80 leading-relaxed">Para quem valoriza o diálogo como ferramenta de <b class="font-semibold text-primary">acesso e construção interna</b>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-slide-up stagger-1">
+                    <h2 class="text-4xl font-bold mb-8">O que esperar desse processo?</h2>
+                    <div class="gradient-hero p-8 rounded-2xl shadow-soft">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="h-2 w-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                <p class="text-foreground/80 leading-relaxed">Um <b class="font-semibold text-primary">espaço de abertura</b>, não de direção.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="h-2 w-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                <p class="text-foreground/80 leading-relaxed">Um <b class="font-semibold text-primary">diálogo vivo</b>, que, em meio a desconfortos e questionamentos, provoca movimento.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="h-2 w-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                                <p class="text-foreground/80 leading-relaxed">Um fluxo em <b class="font-semibold text-primary">movimento constante</b>, sem receitas prontas, fórmulas ou atalhos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-4 gradient-subtle">
+        <div class="container max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12 animate-slide-up">Sobre Paulo Cesar</h2>
+            
+            <div class="bg-card/70 backdrop-blur-sm p-12 rounded-2xl shadow-elegant animate-slide-up stagger-1">
+                <p class="text-lg text-foreground/80 leading-relaxed">
+                    Terapeuta que ao longo de suas experiências e interações com diferentes personalidades gerou um método baseado no <span class="font-semibold text-primary">diálogo crítico</span>. Seu foco está em acompanhar processos, como um auxiliador, e não em conduzi-los para um fim predeterminado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4">
+        <div class="container max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 animate-slide-up">Depoimentos</h2>
+            <p class="text-lg text-muted-foreground text-center mb-16 animate-slide-up stagger-1">
+                de quem se colocou em discussão
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-soft card-hover animate-slide-up stagger-2">
+                    <span class="text-4xl text-primary/30 mb-4 block">"</span>
+                    <p class="text-foreground/80 leading-relaxed mb-6 italic">
+                        "Diferente de terapias convencionais, onde frases de efeito ou atividades infantis são aplicadas, encontrei um espaço que me fez refletir e analisar não só a mim mesmo, mas também aquilo que estava ao meu redor."
+                    </p>
+                    <p class="font-semibold text-primary">— Wilson</p>
+                </div>
+
+                <div class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-soft card-hover animate-slide-up stagger-3">
+                    <span class="text-4xl text-primary/30 mb-4 block">"</span>
+                    <p class="text-foreground/80 leading-relaxed mb-6 italic">
+                        "Não foi um processo fácil, pois muitas vezes os questionamentos e as problematizações colocadas para nós provocam dor e são desafiadoras, mas com certeza resultam em maior consciência sobre o que somos, pensamos e sentimos."
+                    </p>
+                    <p class="font-semibold text-primary">— Bruna</p>
+                </div>
+
+                <div class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-soft card-hover animate-slide-up stagger-4">
+                    <span class="text-4xl text-primary/30 mb-4 block">"</span>
+                    <p class="text-foreground/80 leading-relaxed mb-6 italic">
+                        "Encontrei no Paulo Cesar alguém para conversar sobre os mais diversos assuntos que são importantes para mim, sem preconceitos de nenhuma espécie ou discursos prontos. Recomendo a todos que buscam alguém para ter uma conversa."
+                    </p>
+                    <p class="font-semibold text-primary">— José</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 px-4 gradient-hero">
+        <div class="container max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">Quer conversar?</h2>
+            <p class="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up stagger-1">
+                A escolha da plataforma é sua. O valor, também.<br>
+                Permita-se conversar sobre aquilo que é importante para você.
+            </p>
+            
+            <div class="space-y-6 animate-slide-up stagger-2">
+                <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-btn inline-flex items-center gap-3 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300">
+                    <span class="text-2xl">💬</span>
+                    Agendar pelo WhatsApp
+                </a>                
+                
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll function
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            animatedElements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+
+        // Add some interactivity to cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
